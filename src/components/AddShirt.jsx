@@ -1,4 +1,5 @@
 import React, { useRef, useContext } from "react";
+import { ShirtContext } from "../store/ShirtContext";
 
 function AddShirt() {
   const name = useRef();
@@ -7,6 +8,8 @@ function AddShirt() {
   const quantity_L = useRef();
   const quantity_M = useRef();
   const quantity_S = useRef();
+
+  const shirtContext = useContext(ShirtContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,6 +22,7 @@ function AddShirt() {
       quantity_S: quantity_S.current.value,
     };
 
+    shirtContext.addShirt(obj);
     console.log("object", obj);
   };
 

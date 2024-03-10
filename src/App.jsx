@@ -3,12 +3,15 @@ import { useState } from "react";
 import "./App.css";
 import AddShirt from "./components/AddShirt";
 import ListShirt from "./components/ListShirt";
+import { ShirtContextProvider } from "./store/ShirtContext";
 
 function App() {
   return (
     <>
-      <AddShirt />
-      <ListShirt />
+      <ShirtContextProvider>
+        <AddShirt />
+        <ListShirt />
+      </ShirtContextProvider>
     </>
   );
 }
