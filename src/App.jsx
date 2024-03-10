@@ -4,13 +4,16 @@ import "./App.css";
 import AddShirt from "./components/AddShirt";
 import ListShirt from "./components/ListShirt";
 import { ShirtContextProvider } from "./store/ShirtContext";
+import { CartContextProvider } from "./store/CartContext";
 
 function App() {
   return (
     <>
       <ShirtContextProvider>
-        <AddShirt />
-        <ListShirt />
+        <CartContextProvider>
+          <AddShirt />
+          <ListShirt />
+        </CartContextProvider>
       </ShirtContextProvider>
     </>
   );
