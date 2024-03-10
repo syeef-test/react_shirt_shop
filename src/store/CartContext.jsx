@@ -2,7 +2,7 @@ import React, { createContext, useState, useEffect } from "react";
 
 export const CartContext = createContext();
 
-const BASE_URL = ``;
+const BASE_URL = `https://crudcrud.com/api/0511eacfc0b5444c8c85df17cb1bf987`;
 
 export const CartContextProvider = ({ children }) => {
   const [cart, setCart] = useState([]);

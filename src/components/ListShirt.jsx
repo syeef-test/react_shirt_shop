@@ -9,16 +9,19 @@ function ListShirt() {
   const buyLarge = (item) => {
     console.log("buy large", item);
     cartContext.addCartLarge(item, 1);
+    shirtContext.removeShirt(item, "L");
   };
 
   const buyMed = (item) => {
     console.log("buy Med", item);
     cartContext.addCartMed(item, 1);
+    shirtContext.removeShirt(item, "M");
   };
 
   const buySmall = (item) => {
     console.log("buy Small", item);
     cartContext.addCartSmall(item, 1);
+    shirtContext.removeShirt(item, "S");
   };
 
   const shirtList = (
