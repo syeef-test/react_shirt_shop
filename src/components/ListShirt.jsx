@@ -26,27 +26,28 @@ function ListShirt() {
 
   const shirtList = (
     <ul>
-      {shirtContext.shirt.map((item) => (
-        <li key={item.name}>
-          <div>
-            <strong>Name:</strong>
-            {item.name}
-            <strong>Desc:</strong>
-            {item.desc}
-            <strong>Price:</strong>
-            {item.price}
-            <button onClick={() => buyLarge(item)}>
-              Buy Large {item.quantity_L}
-            </button>
-            <button onClick={() => buyMed(item)}>
-              Buy Med{item.quantity_M}
-            </button>
-            <button onClick={() => buySmall(item)}>
-              Buy Small{item.quantity_S}
-            </button>
-          </div>
-        </li>
-      ))}
+      {Array.isArray(shirtContext.shirt) &&
+        shirtContext.shirt.map((item, index) => (
+          <li key={index}>
+            <div>
+              <strong>Name:</strong>
+              {item.name}
+              <strong>Desc:</strong>
+              {item.desc}
+              <strong>Price:</strong>
+              {item.price}
+              <button onClick={() => buyLarge(item)}>
+                Buy Large {item.quantity_L}
+              </button>
+              <button onClick={() => buyMed(item)}>
+                Buy Med{item.quantity_M}
+              </button>
+              <button onClick={() => buySmall(item)}>
+                Buy Small{item.quantity_S}
+              </button>
+            </div>
+          </li>
+        ))}
     </ul>
   );
 
